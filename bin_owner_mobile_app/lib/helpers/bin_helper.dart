@@ -11,7 +11,7 @@ Widget buildEmptyBinMessage() {
         Icon(Icons.delete_outline, color: Colors.white54, size: 80),
         const SizedBox(height: 20),
         const Text(
-          "No bins found",
+          "No bins found!",
           style: TextStyle(color: Colors.white70, fontSize: 20),
         ),
         const SizedBox(height: 10),
