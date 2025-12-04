@@ -1,0 +1,1700 @@
+/* === styles.css === */
+
+/* Base Styles */
+:root {
+  --primary-color: #4caf50;
+  --primary-light: #81c784;
+  --primary-dark: #2e7d32;
+  --secondary-color: #34404d;
+  --secondary-light: #546e7a;
+  --dark-bg: #1e2529;
+  --card-bg: #2c3539;
+  --text-light: #ffffff;
+  --text-secondary: #a0a0a0;
+  --accent-red: #f44336;
+  --accent-blue: #3f51b5;
+  --accent-yellow: #ffeb3b;
+  --success-green: #4caf50;
+  --warning-amber: #ffc107;
+  --error-red: #f44336;
+  --gray-800: #424242;
+  --gray-700: #616161;
+  --gray-600: #757575;
+  --gray-500: #9e9e9e;
+  --gray-400: #bdbdbd;
+  --gray-300: #e0e0e0;
+  --gray-200: #eeeeee;
+  --gray-100: #f5f5f5;
+  --default-radius: 6px;
+  --default-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --default-transition: all 0.3s ease;
+}
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text-light);
+  background-color: var(--dark-bg);
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  font-family: inherit;
+}
+
+/* App Layout */
+.app {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+.app__main-content { /* Renamed from app__main for clarity */
+  flex: 1;
+  background-color: var(--dark-bg);
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Ensure it takes full height */
+  overflow: hidden; /* Prevent this level from scrolling */
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: 240px;
+  background-color: var(--secondary-color);
+  color: var(--text-light);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.sidebar__logo {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar__logo-img {
+  width: 290px;
+  height: 100px;
+  object-fit: cover;
+}
+
+
+.sidebar__logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar__logo-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-light);
+}
+
+.sidebar__logo-tagline {
+  font-size: 10px;
+  color: var(--text-secondary);
+}
+
+.sidebar__menu {
+  flex: 1;
+  padding: 16px 0;
+  overflow-y: auto;
+}
+
+.sidebar__menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sidebar__menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: var(--default-transition);
+  color: var(--text-secondary);
+}
+
+.sidebar__menu-item:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--text-light);
+}
+
+.sidebar__menu-item--active {
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 4px;
+  margin: 0 8px;
+  padding: 12px 8px;
+}
+
+.sidebar__footer {
+  padding: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar__footer-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: var(--default-transition);
+}
+
+.sidebar__footer-item:hover {
+  color: var(--text-light);
+}
+
+.sidebar__user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar__user-avatar {
+  width: 32px;
+  height: 32px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+}
+
+/* Header Styles */
+.header {
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--dark-bg);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.header__welcome {
+  display: flex;
+  flex-direction: column;
+}
+
+.header__title {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+
+.header__user {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-light);
+}
+
+.header__notification-icon {
+  position: relative;
+  cursor: pointer;
+}
+
+.header__notification-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: var(--error-red);
+  color: white;
+  border-radius: 50%;
+  font-size: 10px;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Search Bar Styles */
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 0 16px;
+  width: 300px;
+  height: 40px;
+}
+
+.search-bar__icon {
+  margin-right: 8px;
+}
+
+.search-bar__input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-light);
+  width: 100%;
+  font-size: 14px;
+}
+
+.search-bar__input::placeholder {
+  color: var(--text-secondary);
+}
+
+/* Dashboard Grid Layout */
+.dashboard {
+  /*
+    This padding is removed because the parent .app__page-content now handles it.
+    If we keep it, Dashboard will have double padding.
+    All other page components (BinManagement, etc.) should also NOT have root padding.
+  */
+  /* padding: 24px; */
+}
+
+.dashboard__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto;
+  gap: 24px;
+}
+
+/* Card Base Styles */
+.card {
+  background-color: var(--card-bg);
+  border-radius: var(--default-radius);
+  box-shadow: var(--default-shadow);
+  padding: 20px;
+}
+
+.card__title {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-light);
+  margin-bottom: 16px;
+}
+
+/* Next Collection Date Card */
+.collection-date__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 0;
+}
+
+.collection-date__main {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.collection-date__day {
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.collection-date__superscript {
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 12px;
+}
+
+.collection-date__month-year {
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.collection-date__label {
+  background-color: var(--error-red);
+  color: white;
+  padding: 4px 16px;
+  border-radius: 4px;
+  margin-top: 16px;
+  font-size: 14px;
+}
+
+/* Available Trucks Card */
+.available-trucks__stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.available-trucks__stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.available-trucks__label {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.available-trucks__value {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.available-trucks__value--idle {
+  color: var(--success-green);
+}
+
+.available-trucks__value--route {
+  color: var(--text-light);
+}
+
+.available-trucks__value--repair {
+  color: var(--error-red);
+}
+
+/* Maintenance Requests Card */
+.maintenance-requests__stats {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+
+.maintenance-requests__stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.maintenance-requests__label {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.maintenance-requests__value {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.maintenance-requests__value--emergency {
+  color: var(--error-red);
+}
+
+.maintenance-requests__value--repair {
+  color: var(--error-red);
+}
+
+/* Total Bins Card */
+.total-bins__total {
+  font-size: 64px;
+  font-weight: 700;
+  text-align: center;
+  margin: 24px 0;
+}
+
+.total-bins__stats {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 16px;
+}
+
+.total-bins__stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.total-bins__label {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.total-bins__value-container {
+  display: flex;
+  align-items: baseline;
+}
+
+.total-bins__value {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.total-bins__fraction {
+  font-size: 16px;
+  color: var(--text-secondary);
+}
+
+/* Map Card */
+.map {
+  grid-column: span 2;
+}
+
+.map__container {
+  position: relative;
+  height: 100%;
+}
+
+.map__options {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: white;
+  border-radius: 4px;
+  margin: 10px;
+  display: flex;
+}
+
+.map__option {
+  padding: 8px 16px;
+  font-size: 12px;
+  color: var(--gray-700);
+  transition: var(--default-transition);
+}
+
+.map__option--active {
+  background-color: var(--gray-200);
+  font-weight: 500;
+}
+
+.map__content {
+  height: 100%;
+  border-radius: var(--default-radius);
+  overflow: hidden;
+}
+
+.map__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.leaflet-container{
+    grid-column: span 3;
+}
+
+.map__attribution {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 4px 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 10px;
+  color: var(--gray-700);
+}
+
+.map__links {
+  display: flex;
+  gap: 12px;
+}
+
+.map__link {
+  color: var(--primary-dark);
+}
+
+/* History Card */
+.history {
+  grid-column: span 2;
+}
+
+.history__content {
+  min-height: 200px;
+}
+
+/* Responsive Design */
+@media (max-width: 1280px) {
+  .dashboard__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .map {
+    grid-column: span 1;
+  }
+
+  .history {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    width: 60px;
+  }
+
+  .sidebar__logo-text,
+  .sidebar__menu-item span,
+  .sidebar__footer-item span,
+  .sidebar__user-name {
+    display: none;
+  }
+
+  .search-bar {
+    width: 200px;
+  }
+}
+
+
+
+/* === "HALF EMPTY" PAGE FIX === */
+
+.app__content {
+  flex: 1; /* This lets it grow to fill space */
+  padding: 24px;
+
+  /* --- CHANGE 1: Enable scrolling here --- */
+  overflow-y: auto;
+  /* overflow: hidden; <--- REMOVE THIS */
+
+  display: flex;
+  flex-direction: column;
+
+  /* --- CHANGE 2: Ensure it handles child height correctly --- */
+  height: 100%;
+}
+
+/* This class can be removed or kept, but the scroll is now handled by app__content above */
+.app__page-content {
+  flex: 1;
+  /* overflow-y: auto;  <--- Moved logic up to app__content */
+  padding-top: 24px;
+}
+
+
+/* Tab Navigation */
+.app__tabs {
+  display: flex;
+  align-items: center;
+  background-color: var(--card-bg);
+  padding: 0 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  overflow-x: auto;
+  flex-shrink: 0; /* Prevent tabs from shrinking */
+}
+
+.app__tab-button {
+  padding: 16px 24px;
+  font-size: 14px;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: var(--default-transition);
+  position: relative;
+  white-space: nowrap;
+}
+
+.app__tab-button:hover {
+  color: var(--text-light);
+}
+
+.app__tab-button--active {
+  color: var(--primary-color);
+}
+
+.app__tab-button--active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--primary-color);
+}
+
+.app__tab-actions {
+  margin-left: auto;
+  display: flex;
+  gap: 8px;
+  padding-left: 16px;
+}
+
+.app__action-button {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--default-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--text-secondary);
+  font-size: 16px;
+  transition: var(--default-transition);
+}
+
+.app__action-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--text-light);
+}
+
+/* Modal Styles */
+.app__modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.app__modal {
+  background-color: var(--card-bg);
+  border-radius: var(--default-radius);
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.app__modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.app__modal-header h2 {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-light);
+}
+
+.app__modal-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: var(--default-transition);
+}
+
+.app__modal-close:hover {
+  color: var(--text-light);
+}
+
+.app__modal-content {
+  padding: 20px;
+}
+
+.app__modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 16px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.app__modal-delete-confirm {
+  color: var(--text-light);
+  text-align: center;
+  padding: 20px 0;
+}
+
+.app__modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Button Styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.6em 1.2em;
+  border-radius: 8px;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s;
+  border: 1px solid transparent;
+}
+
+.btn--primary {
+  background-color: var(--primary-color, #4caf50);
+  color: white;
+}
+.btn--primary:hover {
+  background-color: var(--primary-dark, #2e7d32);
+}
+.btn--primary:disabled {
+  background-color: #6b7280;
+  cursor: not-allowed;
+}
+
+
+.btn--secondary {
+  background-color: #4b5563;
+  color: white;
+}
+.btn--secondary:hover {
+  background-color: #6b7280;
+}
+.btn--secondary:disabled {
+  background-color: #374151;
+  cursor: not-allowed;
+}
+
+.btn--danger {
+  background-color: var(--error-red, #f44336);
+  color: white;
+}
+.btn--danger:hover {
+  background-color: #d32f2f;
+}
+.btn--danger:disabled {
+  background-color: #6b7280;
+  cursor: not-allowed;
+}
+
+
+/* Notifications Panel */
+.app__notifications {
+  position: fixed;
+  top: 64px;
+  right: -320px;
+  width: 320px;
+  max-height: calc(100vh - 64px);
+  background-color: var(--card-bg);
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  z-index: 900;
+  transition: right 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.app__notifications--visible {
+  right: 0;
+}
+
+.app__notifications-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.app__notifications-header h3 {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-light);
+}
+
+.app__notifications-clear {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 12px;
+  cursor: pointer;
+  transition: var(--default-transition);
+}
+
+.app__notifications-clear:hover:not(:disabled) {
+  color: var(--text-light);
+}
+
+.app__notifications-clear:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.app__notifications-list {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.app__notifications-empty {
+  padding: 24px 16px;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.app__notification {
+  display: flex;
+  padding: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.app__notification--warning {
+  border-left: 3px solid var(--warning-amber);
+}
+
+.app__notification--error {
+  border-left: 3px solid var(--error-red);
+}
+
+.app__notification--success {
+  border-left: 3px solid var(--success-green);
+}
+
+.app__notification--info {
+  border-left: 3px solid var(--accent-blue);
+}
+
+.app__notification-content {
+  flex: 1;
+}
+
+.app__notification-message {
+  font-size: 14px;
+  color: var(--text-light);
+  margin-bottom: 4px;
+}
+
+.app__notification-time {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.app__notification-dismiss {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 16px;
+  cursor: pointer;
+  transition: var(--default-transition);
+  height: fit-content;
+}
+
+.app__notification-dismiss:hover {
+  color: var(--text-light);
+}
+
+/* Sidebar collapsed state */
+.sidebar--collapsed {
+  width: 60px;
+}
+
+/* Mobile overlay */
+.app__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 800;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .app__tabs {
+    padding: 0 8px;
+  }
+
+  .app__tab-button {
+    padding: 16px 12px;
+    font-size: 13px;
+  }
+
+  .app__tab-actions {
+    padding-left: 8px;
+  }
+
+  .app__content {
+    padding: 16px;
+  }
+}
+
+/* === Login.css === */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #1c1f23;
+  height: 100vh;
+  position: relative;
+  font-size: 16px; /* Base font size slightly increased */
+}
+
+/* Logo - fixed to top-left */
+.login-logo {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.login-logo img {
+  width: 300px;
+  height: 100px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+
+/* Main login container centered */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full vertical centering */
+}
+
+/* Login card */
+.login-card {
+  background-color: #353a40;
+  padding: 40px;
+  border-radius: 20px;
+  width: 500px;
+  max-width: 90%;
+  text-align: left;
+}
+
+.login-card h2 {
+  color: white;
+  font-size: 30px;
+  margin-bottom: auto;
+}
+
+.login-card .subtitle {
+  color: #b0b0b0;
+  font-size: 16px;
+}
+
+.login-card form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-card label {
+      margin-top: 6px;
+
+  color: white;
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.login-card input {
+  background-color: #5b5f65;
+  border: none;
+  padding: 12px;
+  margin-bottom: 18px;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+}
+
+/* Password field wrapper */
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper input {
+  width: 95%;
+}
+
+.password-wrapper .toggle-visibility {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #d0d0d0;
+}
+
+/* Login button */
+.login-card button {
+  background-color: #c1ed1f;
+  border: none;
+  padding: 14px;
+  border-radius: 10px;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+  transition: 0.2s ease;
+}
+
+.login-card button:hover {
+  background-color: #b5dd1c;
+}
+
+
+/* === Form.css === */
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #e2e8f0;
+  margin-bottom: 0.5rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #4b5563;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  background-color: #374151;
+  color: #f3f4f6;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box; /* Important */
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
+}
+
+.error-message {
+  color: #f43f5e;
+  font-size: 0.875rem;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+/* Make modal buttons (like Cancel/Save) work inside the form's footer */
+.app__modal-form .app__modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  padding-top: 1rem;
+  margin-top: 1rem;
+  border-top: 1px solid #374151; /* Use a dark border */
+}
+
+/* Button styles are already covered by .btn classes in the main section */
+
+
+/* === Settings.css === */
+
+/* A simple, dark theme for the settings page */
+.settings-page-dark {
+  /* background-color: #111827; */ /* Page background is already dark */
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* padding: 2rem; */ /* Padding is handled by app__page-content */
+  box-sizing: border-box;
+}
+
+.settings-card-dark {
+  width: 100%;
+  max-width: 450px;
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  padding: 2.5rem;
+  border: 1px solid #374151;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  color: #d1d5db; /* Light text color */
+}
+
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.profile-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #374151;
+  box-shadow: 0 0 0 4px #4f46e5; /* Accent color ring */
+  margin-bottom: 1rem;
+}
+
+.profile-name {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+}
+
+.profile-email {
+  font-size: 1rem;
+  color: #9ca3af;
+  margin-top: 0.25rem;
+}
+
+.info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+  border-top: 1px solid #374151;
+  padding-top: 2rem;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.info-icon {
+  color: #9ca3af;
+  flex-shrink: 0;
+}
+
+.info-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6b7280;
+}
+
+.info-value {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #e5e7eb;
+}
+
+.action-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.settings-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.85rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid #374151;
+  background-color: #374151;
+  color: #e5e7eb;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.settings-button:hover {
+  background-color: #4b5563;
+}
+
+.settings-button--danger {
+  background-color: transparent;
+  border-color: #be123c;
+  color: #f43f5e;
+}
+
+.settings-button--danger:hover {
+  background-color: #f43f5e;
+  border-color: #f43f5e;
+  color: #ffffff;
+}
+
+/* === TruckManagement.css === */
+
+.page-content {
+  margin: 0 auto;
+  /* padding: 2rem; */ /* Handled by app__page-content */
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid #334155;
+}
+
+.page-header svg {
+  color: var(--primary-color);
+}
+
+.page-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+  color: #f8fafc;
+  letter-spacing: -0.025em;
+}
+
+.page-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.5rem;
+}
+
+.data-table th {
+  padding: 1rem 0.75rem;
+  text-align: left;
+  font-weight: 600;
+  color: #f1f5f9;
+  border-bottom: 2px solid var(--primary-color);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background-color: var(--dark-bg);
+}
+
+.data-table td {
+  padding: 1rem 0.75rem;
+  color: #cbd5e1;
+  border-bottom: 1px solid #3f4b52;
+  font-size: 0.9rem;
+}
+
+.data-table tbody tr:hover {
+  background-color: #334155;
+  transition: background-color 0.2s ease;
+}
+
+.data-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.375rem 0.875rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.status-badge--success {
+  background-color: #065f46;
+  color: #a7f3d0;
+  border: 1px solid #10b981;
+}
+
+.status-badge--danger {
+  background-color: #7f1d1d;
+  color: #fca5a5;
+  border: 1px solid #ef4444;
+}
+
+.status-badge--warning {
+  background-color: #78350f;
+  color: #fcd34d;
+  border: 1px solid #f59e0b;
+}
+
+.status-badge--primary {
+  background-color: #312e81;
+  color: #a5b4fc;
+  border: 1px solid #6366f1;
+}
+
+.status-badge--default {
+  background-color: #374151;
+  color: #e5e7eb;
+  border: 1px solid #4b5563;
+}
+
+
+.action-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.action-buttons button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.action-buttons button:hover {
+  background-color: #374151;
+}
+
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+.btn-icon:hover {
+  opacity: 0.8;
+}
+.btn-icon--primary { color: #60a5fa; }
+.btn-icon--danger { color: #f43f5e; }
+.btn-icon--success { color: #4ade80; }
+.btn-icon--info { color: #22d3ee; }
+
+/* === RouteManagement.css (Adapted for Dark Theme) === */
+
+/* Priority Badge (Adapted for Dark) */
+.priority-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.priority--high {
+  background-color: #7f1d1d; /* Dark Red */
+  color: #fca5a5; /* Light Red */
+}
+
+.priority--medium {
+  background-color: #78350f; /* Dark Orange */
+  color: #fcd34d; /* Light Orange */
+}
+
+.priority--low {
+  background-color: #065f46; /* Dark Green */
+  color: #a7f3d0; /* Light Green */
+}
+
+/* Assignment Status */
+.assignment-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.assignment-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.assignment-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.assignment-icon--assigned {
+  color: var(--success-green);
+}
+
+.assignment-icon--unassigned {
+  color: var(--error-red);
+}
+
+.assignment-text {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.assignment-text--assigned {
+  color: var(--success-green);
+}
+
+.assignment-text--unassigned {
+  color: var(--error-red);
+}
+
+/* Card Subtitle */
+.card-subtitle {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+}
+
+/* Assignment Container */
+.assignment-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.assignment-section {
+  background: var(--card-bg); /* Dark */
+  border-radius: 8px;
+  padding: 1.5rem;
+  border: 1px solid #374151; /* Dark */
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-light); /* Light */
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #374151; /* Dark */
+}
+
+/* Driver Truck Grid */
+.driver-truck-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.driver-truck-card {
+  background: var(--dark-bg); /* Darker */
+  border: 2px solid #374151; /* Dark */
+  border-radius: 8px;
+  padding: 1rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.driver-truck-card:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.driver-truck-card--assigned {
+  border-color: var(--success-green);
+  background: #1e3529; /* Dark Green */
+}
+
+.driver-truck-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+}
+
+.truck-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.truck-plate {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-light); /* Light */
+  margin: 0;
+}
+
+.truck-id {
+  font-size: 0.75rem;
+  color: var(--text-secondary); /* Light */
+}
+
+.driver-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.driver-info,
+.truck-details {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary); /* Light */
+}
+
+.assignment-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-top: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  background: #065f46; /* Dark Green */
+  color: #a7f3d0; /* Light Green */
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Available Routes */
+.available-routes {
+  display: grid;
+  gap: 1rem;
+}
+
+.route-assignment-card {
+  background: var(--dark-bg); /* Darker */
+  border: 2px solid #374151; /* Dark */
+  border-radius: 8px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.route-assignment-card:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.route-assignment-card--selected {
+  border-color: var(--primary-color);
+  background: #313c4a; /* Dark Blue */
+  box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.1);
+}
+
+.route-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+}
+
+.route-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-light); /* Light */
+  margin: 0;
+}
+
+.route-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.route-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary); /* Light */
+}
+
+.route-stats {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.route-stat {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+/* === Maps.css === */
+.map-container-wrapper {
+  display: flex; /* Use flexbox for layout */
+  width: 100%;
+  /* Make it fill the available space in the .app__page-content */
+  height: 100%;
+  min-height: 70vh; /* Ensure it has a good minimum height */
+}
+
+.map-sidebar {
+  width: 250px;
+  padding: 1rem;
+  overflow-y: auto;
+  flex-shrink: 0; /* Prevent sidebar from shrinking */
+  background-color: var(--card-bg);
+  color: var(--text-light);
+  border-right: 1px solid #374151;
+}
+
+.map-sidebar h3 {
+  color: var(--primary-color);
+  border-bottom: 1px solid #374151;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+.map-sidebar h4 {
+  color: var(--text-light);
+  margin-top: 1.5rem;
+}
+.map-sidebar p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+.map-sidebar ol {
+  padding-left: 1.5rem;
+}
+.map-sidebar li {
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+}
+.map-sidebar li b {
+  color: var(--text-light);
+}
+
+
+/* Ensure the Map component's container fills the remaining space */
+.map-container-wrapper > div:last-child {
+    flex-grow: 1;
+}
+

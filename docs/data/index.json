@@ -1,0 +1,31 @@
+{
+    "team": [
+        {
+            "name": "Chanuka B.D.K.",
+            "email": "e20049@eng.pdn.ac.lk",
+            "eNumber": "E/20/049"
+        },
+        {
+            "name": "Edirisooriya D.M.B.",
+            "email": "e20093@eng.pdn.ac.lk",
+            "eNumber": "E/20/093"
+        },
+        {
+            "name": "Malshan P.G.P.",
+            "email": "e20244@eng.pdn.ac.lk",
+            "eNumber": "E/20/244"
+        },
+        {
+            "name": "Nirmani K.G.H.",
+            "email": "e20271@eng.pdn.ac.lk",
+            "eNumber": "E/20/271"
+        }
+    ],
+    "supervisors": [
+        {
+            "name": "Dr. Isuru Nawinne",
+            "email": "isurunawinne@eng.pdn.ac.lk"
+        }
+    ],
+    "tags": ["Web", "Embedded Systems"]
+}

@@ -1,0 +1,20 @@
+{
+  "buildFiles": [
+    "C:\\Android studio\\flutter\\packages\\flutter_tools\\gradle\\src\\main\\groovy\\CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "C:\\Users\\User\\AppData\\Local\\Android\\sdk\\cmake\\3.22.1\\bin\\ninja.exe",
+      "-C",
+      "C:\\Users\\User\\Desktop\\Green-pulse\\e20-3yp-Smart-Waste-Management-System\\truck_driver_mobile_app\\android\\app\\.cxx\\Debug\\3w1u3fb2\\armeabi-v7a",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "C:\\Users\\User\\AppData\\Local\\Android\\sdk\\cmake\\3.22.1\\bin\\ninja.exe",
+    "-C",
+    "C:\\Users\\User\\Desktop\\Green-pulse\\e20-3yp-Smart-Waste-Management-System\\truck_driver_mobile_app\\android\\app\\.cxx\\Debug\\3w1u3fb2\\armeabi-v7a",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {}
+}

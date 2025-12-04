@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Pulse - Smart Waste Management System</title>
+    <link rel="stylesheet" href="assets/styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-logo">
+            <i class="fas fa-recycle"></i>
+            <span>Green Pulse</span>
+        </div>
+        <div class="nav-links">
+            <a href="#home" class="active">Home</a>
+            <a href="#introduction">About</a>
+            <a href="#features">Features</a>
+            <a href="#architecture">Architecture</a>
+            <a href="#tech-stack">Tech Stack</a>
+            <a href="#budget">Budget</a>
+            <a href="#team">Team</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <section id="home" class="hero"
+        style="background-image: linear-gradient(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.5)), url('assets/images/city-background.jpg');">
+        <div class="hero-content">
+            <img src="assets/images/logo.png" alt="Green Pulse Logo" class="hero-logo">
+            <h1>Welcome to Green Pulse</h1>
+            <p>Revolutionizing Waste Management with Smart Technology</p>
+
+        </div>
+    </section>
+
+    <section id="introduction" class="introduction">
+        <div class="container">
+            <div class="problem-section">
+                <h2>The Problem</h2>
+                <div class="content">
+                    <p>Current waste management systems face significant challenges:</p>
+                    <ul>
+                        <li>Inefficient collection routes and timing</li>
+                        <li>Limited real-time monitoring capabilities</li>
+                        <li>Poor waste segregation practices</li>
+                        <li>High operational costs</li>
+                        <li>Environmental impact concerns</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="solution-section">
+                <h2>Our Solution</h2>
+                <div class="content">
+                    <p>Green Pulse offers a comprehensive smart waste management solution:</p>
+                    <ul>
+                        <li>IoT-enabled smart bins with real-time monitoring</li>
+                        <li>Automated waste segregation system</li>
+                        <li>AI-powered route optimization</li>
+                        <li>Real-time analytics and reporting</li>
+                        <li>Mobile app for seamless management</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <h2>Key Features</h2>
+        <div class="features-grid">
+            <div class="feature-item">
+                <i class="fas fa-sort"></i>
+                <h3>Real-Time Sorting</h3>
+                <p>Advanced waste sorting system with real-time monitoring and classification</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-trash-alt"></i>
+                <h3>Bin Status Monitoring</h3>
+                <p>Live monitoring of bin capacity and status for efficient management</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-chart-line"></i>
+                <h3>Real-Time Dashboard</h3>
+                <p>Comprehensive dashboard for monitoring and analyzing waste management data</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-location-dot"></i>
+                <h3>GPS Tracking</h3>
+                <p>Real-time tracking of waste collection vehicles and bins</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-route"></i>
+                <h3>Route Optimization</h3>
+                <p>Smart routing system for efficient waste collection</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add these sections after the features section and before the team section -->
+
+    <section id="architecture" class="architecture">
+        <h2>Solution Architecture</h2>
+        <div class="architecture-container">
+            <div class="arch-diagram">
+                <!-- You can add your architecture diagram image here -->
+                <img src="assets/images/solution_architecture.png" alt="Green Pulse Architecture">
+            </div>
+
+            <div class="arch-components">
+                <div class="component">
+                    <h3><i class="fas fa-microchip"></i> IoT Devices (Smart Bins)</h3>
+                    <ul>
+                        <li>Sensors detect bin fill levels & blockages</li>
+                        <li>Sends data to AWS IoT Core via MQTT</li>
+                        <li>Raspberry Pi 3B+ powered system</li>
+                    </ul>
+                </div>
+
+                <div class="component">
+                    <h3><i class="fas fa-server"></i> Backend (Spring Boot)</h3>
+                    <ul>
+                        <li>Processes IoT data & manages user roles</li>
+                        <li>AI-based route optimization algorithm</li>
+                        <li>JWT Authentication for security</li>
+                    </ul>
+                </div>
+
+                <div class="component">
+                    <h3><i class="fas fa-mobile-alt"></i> Web & Mobile Apps</h3>
+                    <ul>
+                        <li>Web app for garbage collectors (React)</li>
+                        <li>Mobile app for bin users & truck drivers (Flutter)</li>
+                        <li>Responsive and intuitive interfaces</li>
+                    </ul>
+                </div>
+
+                <div class="component">
+                    <h3><i class="fas fa-cloud"></i> Cloud & DevOps</h3>
+                    <ul>
+                        <li>AWS IoT Core for MQTT messaging</li>
+                        <li>AWS EC2 & S3 for hosting</li>
+                        <li>GitHub Actions for CI/CD automation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tech-stack" class="tech-stack">
+        <h2>Technology Stack</h2>
+        <div class="tech-grid">
+            <div class="tech-category">
+                <h3><i class="fas fa-desktop"></i> Frontend</h3>
+                <div class="tech-items">
+                    <div class="tech-item">
+                        <img src="assets/images/react.png" alt="React">
+                        <span>React</span>
+                    </div>
+                    <div class="tech-item">
+                        <img src="assets/images/flutter.png" alt="Flutter">
+                        <span>Flutter</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tech-category">
+                <h3><i class="fas fa-server"></i> Backend</h3>
+                <div class="tech-items">
+                    <div class="tech-item">
+                        <img src="assets/images/spring.png" alt="Spring Boot">
+                        <span>Spring Boot</span>
+                    </div>
+                    <div class="tech-item">
+                        <img src="assets/images/jwt.png" alt="JWT">
+                        <span>JWT Auth</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tech-category">
+                <h3><i class="fas fa-microchip"></i> IoT</h3>
+                <div class="tech-items">
+                    <div class="tech-item">
+                        <img src="assets/images/raspberry.png" alt="Raspberry Pi">
+                        <span>Raspberry Pi 3B+</span>
+                    </div>
+                    <div class="tech-item">
+                        <img src="assets/images/iotcore.png" alt="AWS IoT">
+                        <span>AWS IoT Core</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tech-category">
+                <h3><i class="fas fa-cloud"></i> Cloud & DevOps</h3>
+                <div class="tech-items">
+                    <div class="tech-item">
+                        <img src="assets/images/aws.png" alt="AWS">
+                        <span>AWS Services</span>
+                    </div>
+                    <div class="tech-item">
+                        <img src="assets/images/docker.png" alt="Docker">
+                        <span>Docker</span>
+                    </div>
+                    <div class="tech-item">
+                        <img src="assets/images/github-actions.png" alt="GitHub Actions">
+                        <span>GitHub Actions</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  <section id="cad" class="cad">
+        <h2>CAD Designs</h2>
+        <div class="cad-container">
+    <video width="640" height="360" controls>
+        <source src="./videos/video2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+        </div>
+    </section>
+
+    <section id="cad" class="cad">
+        <div class="cad-container">
+    <video width="640" height="360" controls>
+        <source src="./videos/video1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+        </div>
+    </section>
+
+
+<section id="architecture" class="architecture">
+        <h2>Circuit Diagram</h2>
+        <div class="architecture-container">
+            <div class="arch-diagram">
+                <!-- You can add your architecture diagram image here -->
+                <img src="assets/images/circuit_diagram.jpg" alt="Green Pulse Architecture">
+            </div>
+        </div>
+        </section>
+    
+<section id="testing" class="testing">
+        <h2>Testing</h2>
+        <div class="testing-container">
+            <div class="testing-item">
+                <h3>Unit Testing</h3>
+                <p>All components are tested individually to ensure functionality.</p>
+            </div>
+            <div class="testing-item">
+                <h3>Integration Testing</h3>
+                <p>Components are tested together to verify interactions and data flow.</p>
+            </div>
+            <div class="testing-item">
+                <h3>User Acceptance Testing</h3>
+                <p>End-users validate the system meets their requirements and expectations.</p>
+            </div>
+            <div class="testing-item">
+                <h3>Performance Testing</h3>
+                <p>The system is tested for scalability and performance under load.</p>
+            </div>
+            <div class="testing-item">
+                <h3>Security Testing</h3>
+                <p>Security vulnerabilities are identified and mitigated to ensure data protection.</p>
+            </div>
+
+        </div>
+</section>
+
+    <section id="budget" class="budget">
+        <div class="budget-header">
+            <h2>Project Budget</h2>
+        </div>
+
+        <div class="budget-container">
+            <div class="budget-table-wrapper">
+                <table class="budget-table">
+                    <thead>
+                        <tr>
+                            <th>Component</th>
+                            <th>Quantity</th>
+                            <th>Unit Price (Rs)</th>
+                            <th>Total Price (Rs)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Raspberry Pi 3B+</td>
+                            <td>1</td>
+                            <td>20000</td>
+                            <td>20000</td>
+                        </tr>
+                        <tr>
+                            <td>Ultrasonic Sensors</td>
+                            <td>3</td>
+                            <td>245</td>
+                            <td>735</td>
+                        </tr>
+                        <tr>
+                            <td>IR sensor</td>
+                            <td>1</td>
+                            <td>140</td>
+                            <td>140</td>
+                        </tr>
+                        <tr>
+                            <td>Servo motors</td>
+                            <td>2</td>
+                            <td>340</td>
+                            <td>680</td>
+                        </tr>
+                        <tr>
+                            <td>Raspberry pi camera 2</td>
+                            <td>1</td>
+                            <td>9200</td>
+                            <td>9200</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3">Total Budget</td>
+                            <td id="totalBudget">30755</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="team" class="team">
+        <h2>Our Team</h2>
+        <div class="team-grid">
+
+            <div class="team-member">
+                <img src="assets/images/member1.jpeg" alt="Team Member 1">
+                <h3>Madhura Bhashitha</h3>
+                <p>E/20/093</p>
+                <div class="social-links">
+                    <a href="https://github.com/madhurab00" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/madhuraedirisooriya/" target="_blank"><i
+                            class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="team-member">
+                <img src="assets/images/member2.jpg" alt="Team Member 2">
+                <h3>Kamesh Chanuka</h3>
+                <p>E/20/049</p>
+                <div class="social-links">
+                    <a href="https://github.com/chanukabdk" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/chanukabdk/" target="_blank"><i
+                            class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="team-member">
+                <img src="assets/images/member3.jpg" alt="Team Member 3">
+                <h3>Pasindu Malshan</h3>
+                <p>E/20/244</p>
+                <div class="social-links">
+                    <a href="https://github.com/malshan238" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/pasindu-malshan-093a6329b/" target="_blank"><i
+                            class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="team-member">
+                <img src="assets/images/member4.jpg" alt="Team Member 4">
+                <h3>Hasini Nirmani</h3>
+                <p>E/20/271</p>
+                <div class="social-links">
+                    <a href="https://github.com/hasini416" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/hasini-nirmani-56a94a367" target="_blank"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="team-member supervisor">
+                <img src="assets/images/supervisor.jpg" alt="Project Supervisor">
+                <h3>Dr. Isuru Nawinne</h3>
+                <p>Project Supervisor</p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Green Pulse</h3>
+                <p>Smart Waste Management Solution</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#home">Home</a>
+                <a href="#introduction">About</a>
+                <a href="#features">Features</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Useful links</h3>
+                <div class="social-links">
+                    <a href="https://github.com/cepdnaclk/e20-3yp-Smart-Waste-Management-System"><i
+                            class="fab fa-github"></i>
+                        <p>Github repository</p>
+                    </a>
+                    <a href="https://projects.ce.pdn.ac.lk/3yp/e20/Smart-Waste-Management-System/"><i
+                            class="fas fa-globe"></i>
+                        <p>Department webpage</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Green Pulse. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/scripts/scripts.js"></script>
+</body>
+
+</html>

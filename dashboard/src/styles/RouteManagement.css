@@ -1,0 +1,574 @@
+/* Route Management Additional Styles
+/* Add these styles to your existing TruckManagement.css file */
+
+/* Tab Navigation */
+.tab-navigation {
+  display: flex;
+  gap: 0;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #e5e7eb;
+  background: white;
+  border-radius: 8px 8px 0 0;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tab-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  border: none;
+  background: #f9fafb;
+  color: #6b7280;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-bottom: 3px solid transparent;
+  flex: 1;
+  justify-content: center;
+}
+
+.tab-button:hover {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.tab-button--active {
+  background: white;
+  color: #3b82f6;
+  border-bottom-color: #3b82f6;
+}
+
+.tab-button--active:hover {
+  background: white;
+}
+
+/* Priority Badge */
+.priority-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.priority--high {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+.priority--medium {
+  background-color: #fed7aa;
+  color: #ea580c;
+}
+
+.priority--low {
+  background-color: #dcfce7;
+  color: #16a34a;
+}
+
+/* Assignment Status */
+.assignment-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.assignment-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.assignment-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.assignment-icon--assigned {
+  color: #16a34a;
+}
+
+.assignment-icon--unassigned {
+  color: #dc2626;
+}
+
+.assignment-text {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.assignment-text--assigned {
+  color: #16a34a;
+}
+
+.assignment-text--unassigned {
+  color: #dc2626;
+}
+
+/* Card Subtitle */
+.card-subtitle {
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+}
+
+/* Assignment Container */
+.assignment-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.assignment-section {
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 1.5rem;
+  border: 1px solid #e5e7eb;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+/* Driver Truck Grid */
+.driver-truck-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.driver-truck-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.driver-truck-card:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.driver-truck-card--assigned {
+  border-color: #16a34a;
+  background: #f0fdf4;
+}
+
+.driver-truck-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+}
+
+.truck-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.truck-plate {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+}
+
+.truck-id {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.driver-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.driver-info,
+.truck-details {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #374151;
+}
+
+.assignment-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-top: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  background: #dcfce7;
+  color: #16a34a;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Available Routes */
+.available-routes {
+  display: grid;
+  gap: 1rem;
+}
+
+.route-assignment-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.route-assignment-card:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.route-assignment-card--selected {
+  border-color: #3b82f6;
+  background: #eff6ff;
+  box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.1);
+}
+
+.route-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+}
+
+.route-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+}
+
+.route-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.route-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #374151;
+}
+
+.route-stats {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.route-stat {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+/* Assignment Panel */
+.assignment-panel {
+  background: #eff6ff;
+  border: 2px solid #3b82f6;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+
+.assignment-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #bfdbfe;
+}
+
+.assignment-panel-header h4 {
+  color: #1e40af;
+  margin: 0;
+}
+
+.assignment-options {
+  display: grid;
+  gap: 1rem;
+}
+
+.assignment-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 1rem;
+  border-radius: 6px;
+  border: 1px solid #bfdbfe;
+}
+
+.assignment-option-info {
+  color: #374151;
+}
+
+.assignment-option-info strong {
+  color: #111827;
+}
+
+.assignment-option-info small {
+  color: #6b7280;
+  font-size: 0.75rem;
+}
+
+/* Button Variants */
+.btn--small {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+}
+
+.btn--success {
+  background-color: #16a34a;
+  color: white;
+  border: 1px solid #16a34a;
+}
+
+.btn--success:hover {
+  background-color: #15803d;
+  border-color: #15803d;
+}
+
+.btn--secondary {
+  background-color: #6b7280;
+  color: white;
+  border: 1px solid #6b7280;
+}
+
+.btn--secondary:hover {
+  background-color: #4b5563;
+  border-color: #4b5563;
+}
+
+.legend-title {
+  color: #374151;
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.legend-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: #f9fafb;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+}
+
+.legend-color {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.legend-color--high {
+  background-color: #dc2626;
+}
+
+.legend-color--medium {
+  background-color: #ea580c;
+}
+
+.legend-color--low {
+  background-color: #16a34a;
+}
+
+.legend-info {
+  flex: 1;
+}
+
+.legend-info strong {
+  display: block;
+  color: #111827;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.legend-info span {
+  display: block;
+  color: #6b7280;
+  font-size: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.legend-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+ 
+/*
+/* ================================================= */
+/* ADDITIONAL STYLES FOR THE NEW ASSIGNMENT MODAL   */
+/* ================================================= */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(17, 24, 39, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    backdrop-filter: blur(4px);
+}
+
+.modal-window {
+    background: white;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.modal-header h4 {
+    margin: 0;
+    font-size: 1.125rem;
+    color: #111827;
+}
+
+.modal-route-name {
+    color: #3b82f6;
+    font-weight: 700;
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+.modal-subtitle {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: #6b7280;
+    font-size: 0.875rem;
+}
+
+.modal-options-list {
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+}
+
+.modal-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.modal-option:last-child {
+    border-bottom: none;
+}
+
+.modal-option:hover {
+    background-color: #f9fafb;
+}
+
+.modal-option--selected {
+    background-color: #eff6ff;
+    border-left: 4px solid #3b82f6;
+    padding-left: calc(1rem - 4px);
+}
+
+.modal-option .assignment-option-info {
+    line-height: 1.4;
+}
+
+.selection-checkmark {
+    color: #3b82f6;
+}
+
+.modal-empty-state {
+    text-align: center;
+    padding: 2rem;
+    color: #6b7280;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    padding: 1rem 1.5rem;
+    background-color: #f9fafb;
+    border-top: 1px solid #e5e7eb;
+    border-radius: 0 0 12px 12px;
+}
+
+.modal-footer .btn:disabled {
+    background-color: #d1d5db;
+    cursor: not-allowed;
+}
+
+/* Add a new footer style to the route assignment card */
+.route-assignment-card .card-footer-action {
+  margin-top: 1rem;
+  text-align: right;
+}
+
+/* Minor tweak to route card stats for better spacing */
+.route-assignment-card .route-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 0.75rem;
+}

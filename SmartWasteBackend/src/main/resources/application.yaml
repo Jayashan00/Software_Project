@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: smart_waste-backend
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/smart_waste
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: jayashannawarathna64@gmail.com
+    password: zuen yrld oywh clav
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+logging:
+  level:
+    root: INFO
+    com.smart_wastebackend: DEBUG
+    org.springframework.integration.mqtt: DEBUG
+    org.eclipse.paho.client.mqttv3: DEBUG
+
+jwt:
+  secret: YmFkYjlmNTM5MjliNzk1Y2RiY2MwYjhkYjY3YjIzMzUyMDU5NmM2ZTU4NGRjYjVjZDE5YjYxN2E4YjNjMGE2ZA==
+
+mqtt:
+  # Connect to the Mosquitto broker on your own computer
+  broker: tcp://localhost:1883
+
+  # Mosquitto doesn't need a username/password by default
+  username:
+  password:
+
+  client-id: smart_waste_backend_server
+  status-topic: smartwaste/bin/+/status
+  location-topic: smartwaste/bin/+/location

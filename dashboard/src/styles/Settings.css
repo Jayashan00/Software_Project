@@ -1,0 +1,130 @@
+/* A simple, dark theme for the settings page */
+.settings-page-dark {
+  background-color: #111827; /* Dark background */
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.settings-card-dark {
+  width: 100%;
+  max-width: 450px;
+  background-color: #1f2937; /* Slightly lighter card background */
+  border-radius: 12px;
+  padding: 2.5rem;
+  border: 1px solid #374151;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  color: #d1d5db; /* Light text color */
+}
+
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.profile-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #374151;
+  box-shadow: 0 0 0 4px #4f46e5; /* Accent color ring */
+  margin-bottom: 1rem;
+}
+
+.profile-name {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+}
+
+.profile-email {
+  font-size: 1rem;
+  color: #9ca3af;
+  margin-top: 0.25rem;
+}
+
+.info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+  border-top: 1px solid #374151;
+  padding-top: 2rem;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.info-icon {
+  color: #9ca3af;
+  flex-shrink: 0;
+}
+
+.info-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6b7280;
+}
+
+.info-value {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #e5e7eb;
+}
+
+.action-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.settings-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.85rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid #374151;
+  background-color: #374151;
+  color: #e5e7eb;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.settings-button:hover {
+  background-color: #4b5563;
+}
+
+.settings-button--danger {
+  background-color: transparent;
+  border-color: #be123c;
+  color: #f43f5e;
+}
+
+.settings-button--danger:hover {
+  background-color: #f43f5e;
+  border-color: #f43f5e;
+  color: #ffffff;
+}

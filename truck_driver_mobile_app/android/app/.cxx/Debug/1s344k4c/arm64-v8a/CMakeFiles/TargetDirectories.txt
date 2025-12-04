@@ -1,0 +1,2 @@
+C:/Users/User/Desktop/Green-pulse/e20-3yp-Smart-Waste-Management-System/truck_driver_mobile_app/android/app/.cxx/Debug/1s344k4c/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/Users/User/Desktop/Green-pulse/e20-3yp-Smart-Waste-Management-System/truck_driver_mobile_app/android/app/.cxx/Debug/1s344k4c/arm64-v8a/CMakeFiles/rebuild_cache.dir
